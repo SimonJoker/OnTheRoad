@@ -9,8 +9,17 @@
 *.class
 
 # Generated files
-bin/
-gen/
+OnRoad/bin/
+OnRoad/gen/
+
+android-appcompat_v7/bin/
+android-appcompat_v7/gen/
+
+android-viewpagerindicator/bin/
+android-viewpagerindicator/gen/
+
+android-menudrawer-library/bin/
+android-menudrawer-library/gen/
 
 # Gradle files
 .gradle/
