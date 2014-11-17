@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OnRoad</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <string name="sample_content">Sample of dragging the content.\nThe menu consists of a ListView, for which the
+        active position is saved through configuration changes.\nAdditionally, if the menu is open, a back press will
+        close it.
+    </string>
+
+    <!-- home menu text -->
+    <string name="home_menu_go">旅行</string>
+    <string name="home_menu_discover">发现</string>
+    <string name="home_menu_seek">搜索</string>
+    <string name="home_menu_usage">如何使用This</string>
+    <string name="home_menu_rentout">出租</string>
+    <string name="home_menu_pub">发布</string>
+    <string name="home_menu_why_pub">为什么要发布？</string>
+    <string name="home_menu_setting">设置</string>
+    <string name="home_menu_help">帮助</string>
+    <string name="home_menu_reginOrlogin">注册或登录</string>
+
+   <!--  引导页 -->
+    <string name="guide_btn_text">立即体验</string>
+  
+</resources>

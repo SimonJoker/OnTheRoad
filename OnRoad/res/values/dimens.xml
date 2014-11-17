@@ -1,0 +1,23 @@
+<resources>
+	<!-- meterial menu -->
+    <dimen name="mm_up_arrow_margin">-16dp</dimen>
+    
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">14dp</dimen>
+    
+    <!-- home activity drawer margins -->
+    <dimen name="home_activity_text_margin_left">26dp</dimen>
+    <dimen name="home_activity_text_margin_top">14dp</dimen>
+    <dimen name="home_activity_title_margin_botton">10dp</dimen>
+    <dimen name="home_activity_title_margin_top">20dp</dimen>
+    
+    <dimen name="home_activity_title_text_size">18sp</dimen>
+    <dimen name="home_activity_item_text_size">20sp</dimen>
+
+    <!-- home activity content text size -->
+    <dimen name="home_activity_content_city_size">36sp</dimen>
+    <dimen name="home_activity_content_description_size">20sp</dimen>
+    
+    
+</resources>
