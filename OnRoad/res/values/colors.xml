@@ -15,7 +15,10 @@
     <color name="home_menu_item_text_color">#726f83</color>
     
     <color name="home_content_text_color_white">#87ffffff</color>
-     
+    
+   <!--  guid page text clolor -->
     <color name="guid_btn_text_color">#ffffff</color>
+    <color name="guid_content_text_color">#ffffff</color>
+    
     
 </resources>

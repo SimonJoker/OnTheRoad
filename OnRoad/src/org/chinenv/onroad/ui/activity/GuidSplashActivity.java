@@ -8,6 +8,7 @@ import java.util.TimerTask;
 
 
 
+
 import org.chinenv.onroad.R;
 import org.chinenv.onroad.ui.adapter.GuidViewPagerAdapter;
 import org.chinenv.onroad.util.JudgeIsFirstUseUtil;
@@ -24,6 +25,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.Window;
+import android.widget.ImageView;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -46,6 +48,7 @@ public class GuidSplashActivity extends Activity {
 	ViewPager				guidViewPager;
 	CirclePageIndicator		guidPageIndicator;	
 	PagerAdapter 			guidAdapter;
+	ImageView				imageView;
 	
 	File cacheDir;
 
@@ -101,11 +104,13 @@ public class GuidSplashActivity extends Activity {
 	private void setContent(){
 		LayoutInflater layoutInflater = LayoutInflater.from(mContext);
 		View guidView = layoutInflater.inflate(R.layout.guid_page, null);
-
+		
+		imageView = (ImageView)guidView.findViewById(R.id.guid_image_view);
+		
 		guidViewPager = (ViewPager)guidView.findViewById(R.id.view_pager);	
 		
 		guidPageIndicator = (CirclePageIndicator)guidView.findViewById(R.id.dot_marks);		
-		guidAdapter = new GuidViewPagerAdapter(this, guidViewPager, handler);
+		guidAdapter = new GuidViewPagerAdapter(this, guidViewPager, imageView, handler);
 		guidViewPager.setAdapter(guidAdapter);
 		guidPageIndicator.setViewPager(guidViewPager);
 		

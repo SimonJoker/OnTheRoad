@@ -19,5 +19,9 @@
     <dimen name="home_activity_content_city_size">36sp</dimen>
     <dimen name="home_activity_content_description_size">20sp</dimen>
     
+    <!-- guid pages text size -->
+    <dimen name="guid_title_text_size">28sp</dimen>
+    <dimen name="guid_content_text_size">18sp</dimen>
+    
     
 </resources>
