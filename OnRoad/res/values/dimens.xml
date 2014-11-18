@@ -20,8 +20,10 @@
     <dimen name="home_activity_content_description_size">20sp</dimen>
     
     <!-- guid pages text size -->
-    <dimen name="guid_title_text_size">28sp</dimen>
-    <dimen name="guid_content_text_size">18sp</dimen>
+    <dimen name="guid_title_text_size">24sp</dimen>
+    <dimen name="guid_content_text_size">20sp</dimen>
+    
+    <dimen name="guid_regin_text_size">24sp</dimen>
     
     
 </resources>

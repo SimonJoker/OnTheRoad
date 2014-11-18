@@ -7,6 +7,7 @@
     <color name="transparent">#00000000</color>
     <color name="gray_transparent">#87919191</color>
     <color name="light_gray_transparent">#D3D3D3</color>
+    <color name="light_transparent">#55000000</color>
     
    	<!--  home activity menu color -->
     <color name="home_menu_divider_color">#87B5B5B5</color>
@@ -19,6 +20,11 @@
    <!--  guid page text clolor -->
     <color name="guid_btn_text_color">#ffffff</color>
     <color name="guid_content_text_color">#ffffff</color>
+    <color name="guid_divider_color">#87B5B5B5</color>
+    <color name="guid_btn_bg_color_first">#EE4000</color>
+    <color name="guid_btn_bg_color_secondt">#FFC125</color>
+    <color name="guid_btn_bg_color_third">#CDCD00</color>
+    <color name="guid_btn_bg_color_fourth">#5F9EA0</color>
     
     
 </resources>

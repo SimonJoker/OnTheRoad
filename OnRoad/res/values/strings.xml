@@ -24,16 +24,18 @@
 
    <!--  引导页 -->
     <string name="guide_btn_text">立即体验</string>
-    <string name="guide_title_first">bannerObject3.put("content", R.string.guide_content_fourth);</string>
+    <string name="guide_title_first">向世界各地的当地房东租住独一无二的房源</string>
     <string name="guide_title_second">找到最理想的住处</string>
     <string name="guide_title_third">轻松完成预定手续</string>
     <string name="guide_title_fourth">即日启程</string>
-    
-    
+
     <string name="guide_content_first">" "</string>
     <string name="guide_content_second">按地点、房源类型和更多筛选条件进行搜索。阅读评价，看看旅行者们是如何评价各位房东及房源。</string>
     <string name="guide_content_third">联系房东、确认旅行日期、支付一切都能通过Airbnb值得醒来的服务完成。</string>
     <string name="guide_content_fourth">您可以在旅途中随时随地了解您的房东、让他们为您提供一些当地建议，并查看您的行程单。</string>
+    
+    <string name="regin_text">注册</string>
+    <string name="login_text">登录</string>
     
   
     
