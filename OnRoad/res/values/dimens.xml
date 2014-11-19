@@ -23,7 +23,10 @@
     <dimen name="guid_title_text_size">24sp</dimen>
     <dimen name="guid_content_text_size">20sp</dimen>
     
-    <dimen name="guid_regin_text_size">24sp</dimen>
-    
+    <dimen name="guid_regin_text_size">20sp</dimen>
+    <dimen name="regin_popu_list_text_size">14sp</dimen>
+    <dimen name="regin_login_text_size">20sp</dimen>
+    <dimen name="regin_login_btn_margin_size">10dp</dimen>
+    <dimen name="regin_login_btn_padding_left_right">16dp</dimen>
     
 </resources>

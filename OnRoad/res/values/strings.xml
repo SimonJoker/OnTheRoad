@@ -36,6 +36,14 @@
     
     <string name="regin_text">注册</string>
     <string name="login_text">登录</string>
+    <string name="skip_text">跳过</string>
+    
+    <string name="regin_login_title">登录或注册账号</string>
+    <string name="regin_login_service_terms">服务条款</string>
+    <string name="regin_login_privacy_policy">隐私政策</string>
+    <string name="regin_login_sina">微博</string>
+    <string name="regin_login_facebook">Facebook</string>
+    
     
   
     

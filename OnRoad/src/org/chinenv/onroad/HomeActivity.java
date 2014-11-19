@@ -2,9 +2,13 @@ package org.chinenv.onroad;
 
 import net.simonvt.menudrawer.MenuDrawer;
 
+import org.chinenv.onroad.ui.activity.GuidSplashActivity;
+import org.chinenv.onroad.ui.activity.RegisterAndLoginActivity;
 import org.chinenv.onroad.ui.adapter.HomeListAdapter;
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -14,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -29,14 +34,22 @@ private static final String TAG = "MainActivity";
     private boolean          				direction;
     
    
-    
+    Context									mContext = this;
     View 									menuView;
     View 									contentView;
+    
+    private LinearLayout					_menuSeek;
+    private LinearLayout					_mennuDiscover;
+    private LinearLayout					_menuHowUse;
+    private LinearLayout					_menuPublish;
+    private LinearLayout					_menuWhyPub;
+    private LinearLayout					_menuSetting;
+    private LinearLayout					_menuHelp;
     
     View view;
     
     ListView								_mList;
-    HomeListAdapter								mAdapter;
+    HomeListAdapter							mAdapter;
     
     /**
      * 根据offset来改变icon的alpha值
@@ -82,8 +95,30 @@ private static final String TAG = "MainActivity";
         mDrawer.peekDrawer(1000, 0);
         
         setLisenerOfDrawer();
+        bindViews();
         
     }
+    
+    
+    private void bindViews(){
+    	_menuSeek = (LinearLayout)menuView.findViewById(R.id.menu_seek);
+    	_mennuDiscover = (LinearLayout)menuView.findViewById(R.id.menu_discover);
+    	
+    	_menuHowUse = (LinearLayout)menuView.findViewById(R.id.menu_usage);
+    	_menuHowUse.setOnClickListener(new MenuItemClickListener());
+    	
+    	_menuPublish = (LinearLayout)menuView.findViewById(R.id.menu_pub);
+    	_menuWhyPub = (LinearLayout)menuView.findViewById(R.id.menu_why_pub);
+    	_menuSetting = (LinearLayout)menuView.findViewById(R.id.menu_setting);
+    	_menuHelp = (LinearLayout)menuView.findViewById(R.id.menu_help);
+    	
+    	_menuHelp = (LinearLayout)menuView.findViewById(R.id.login_btn);
+    	_menuHelp.setOnClickListener(new MenuItemClickListener());
+    }
+    
+    
+    
+    
     
     /**
      * 设置drawermenu 的content内容
@@ -94,9 +129,6 @@ private static final String TAG = "MainActivity";
     	mAdapter = new HomeListAdapter(this);
     	_mList.setAdapter(mAdapter);
     	
-//    	LoopViewPager pager = (LoopViewPager)view.findViewById(R.id.pager);
-//    	HomeListPagerAdapter pageradapter = new HomeListPagerAdapter(2);
-//    	pager.setAdapter(pageradapter);
     }
     
         
@@ -158,5 +190,47 @@ private static final String TAG = "MainActivity";
 
         return super.onOptionsItemSelected(item);
     }
+    
+    public class MenuItemClickListener implements OnClickListener{
+
+		@Override
+		public void onClick(View v) {
+			Intent intent;
+			switch (v.getId()) {
+			case R.id.menu_seek:
+				
+				break;
+			case R.id.menu_discover:
+				
+				break;
+			case R.id.menu_usage:
+				intent = new Intent(mContext, GuidSplashActivity.class);
+				Bundle bundle = new Bundle();
+				bundle.putBoolean("Useage", true);
+				intent.putExtras(bundle);
+				startActivity(intent);
+				break;
+			case R.id.menu_pub:
+				
+				break;
+			case R.id.menu_why_pub:
+				
+				break;
+			case R.id.menu_setting:
+				
+				break;
+			case R.id.menu_help:
+				
+				break;
+			case R.id.login_btn:
+				intent = new Intent(mContext, RegisterAndLoginActivity.class);
+				startActivity(intent);
+				break;
+			default:
+				break;
+			}
+			
+			
+		}}
 
 }

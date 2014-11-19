@@ -9,6 +9,7 @@
     <color name="light_gray_transparent">#D3D3D3</color>
     <color name="light_transparent">#55000000</color>
     
+    
    	<!--  home activity menu color -->
     <color name="home_menu_divider_color">#87B5B5B5</color>
     <color name="home_menu_title_text_color">#87A8A8A8</color>
@@ -26,5 +27,10 @@
     <color name="guid_btn_bg_color_third">#CDCD00</color>
     <color name="guid_btn_bg_color_fourth">#5F9EA0</color>
     
+    <!-- regin login page --> 
+	<color name="regin_sina_login_nomal_color">#EE4000</color>
+	<color name="regin_sina_login_pressed_color">#EE6A50</color>
+	<color name="regin_facebook_login_nomal_color">#4682B4</color>
+	<color name="regin_facebook_login_pressed_color">#4F94CD</color>
     
 </resources>

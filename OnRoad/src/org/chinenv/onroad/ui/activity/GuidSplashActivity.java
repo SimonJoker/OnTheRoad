@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Timer;
 import java.util.TimerTask;
 
+import org.chinenv.onroad.HomeActivity;
 import org.chinenv.onroad.R;
 import org.chinenv.onroad.bean.GudidPageDatas;
 import org.chinenv.onroad.ui.adapter.GuidViewPagerAdapter;
@@ -13,17 +14,24 @@ import android.R.layout;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build.VERSION;
+import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v4.widget.SearchViewCompat.OnCloseListenerCompat;
+import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Window;
+import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -40,55 +48,54 @@ public class GuidSplashActivity extends Activity {
 	private static final String TAG = "LoginActivity";
 	
 	private static final int 	ISNEW = 0x001;
-	public static final int 	COMPLETE = 0x002;
+	public static final int 	REGIN_LOGGIN = 0x002;
+	public static final int 	SKIP_GUID = 0x003;
 	
 	private int 				lastPosition = 0;
-	
-	
-	private static final Boolean IS_FIRST_USE = true;
-	private Context 		mContext = this;
 
-	private Handler 		handler;
-	LayoutInflater 			layoutInflater;
-	View 					guidView;
+	private Context 			mContext = this;
+
+	private Handler 			handler;
+	LayoutInflater 				layoutInflater;
+	View 						guidView;
 	
-	ViewPager				guidViewPager;
-	CirclePageIndicator		guidPageIndicator;	
-	PagerAdapter 			guidAdapter;
-	ImageView				imageView;
-	ImageView				imageBg;
-	LinearLayout			btnLayout;
+	ViewPager					guidViewPager;
+	CirclePageIndicator			guidPageIndicator;	
+	PagerAdapter 				guidAdapter;
+	ImageView					imageView;
+	ImageView					imageBg;
+	LinearLayout				btnLayout;
 	
-	LinearLayout			regin_btn;
-	LinearLayout			login_btn;
+	LinearLayout				regin_btn;
+	LinearLayout				login_btn;
 	
-	File 					cacheDir;
+	boolean						useage_flag = false;
+	
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		requestWindowFeature(Window.FEATURE_NO_TITLE);		
+		
+		//设置状态栏透明
+		setScreenState();
+		//设置handler来出来动作监听结果的跳转
 		setHandler();
-//		final Boolean isFirstUse = JudgeIsFirstUseUtil.isFirstUse(mContext);
-		final Boolean isFirstUse = true;
-		if (isFirstUse) {
-			Message msg = Message.obtain();
-			msg.what = ISNEW;
-			handler.sendMessage(msg);
-		}else {
-			setContentView(R.layout.guid_login);
-			new Timer().schedule(new TimerTask() {
-				@Override
-				public void run() {
-					Message msg = Message.obtain();
-					msg.what = COMPLETE;
-					handler.sendMessage(msg);
-				}
-			}, 1000);
+		if (this.getIntent().getExtras() != null) {
+			useage_flag = this.getIntent().getExtras().getBoolean("Useage");
 		}
+		
+		final Boolean isFirstUse = JudgeIsFirstUseUtil.isFirstUse(mContext);
+		Message msg = Message.obtain();
+		if (isFirstUse || useage_flag) {
+			msg.what = ISNEW;
+		}else {
+			msg.what = SKIP_GUID;
+		}
+		handler.sendMessage(msg);
 
 	}
-
+	
+	
 	
 	private void setHandler(){
 		
@@ -100,10 +107,16 @@ public class GuidSplashActivity extends Activity {
 						setContent();
 						JudgeIsFirstUseUtil.saveFirstUseFlag(GuidSplashActivity.this);
 						break;
-					case COMPLETE:
-						Log.i(TAG, "handleMessage----COMPLETE");
-						Intent intent = new Intent(mContext, org.chinenv.onroad.HomeActivity.class);
+					case REGIN_LOGGIN:
+						Log.i(TAG, "handleMessage----REGIN_LOGGIN");
+						Intent intent = new Intent(mContext, RegisterAndLoginActivity.class);
 						startActivity(intent);
+						((Activity) mContext).finish();
+						break;
+					case SKIP_GUID:
+						Log.i(TAG, "handleMessage----SKIP_GUID");
+						Intent intent2 = new Intent(mContext, HomeActivity.class);
+						startActivity(intent2);
 						((Activity) mContext).finish();
 						break;
 					default:
@@ -112,6 +125,45 @@ public class GuidSplashActivity extends Activity {
 				}
 			};
 	}
+	
+	
+	
+	/**
+	 * 设置actionbar
+	 * */
+	private void setActionBar(){
+    	android.app.ActionBar actionBar = this.getActionBar(); 
+    	actionBar.setCustomView(R.layout.splash_actionbar_custom_menu);
+    	actionBar.setDisplayHomeAsUpEnabled(true);
+    	actionBar.setDisplayOptions (ActionBar. DISPLAY_SHOW_CUSTOM);
+    	
+    	LinearLayout btn_back = (LinearLayout)actionBar.getCustomView().findViewById(R.id.btn_back);
+    	Message msg = Message.obtain();
+    	btn_back.setOnClickListener(new AbcBtnClickListener());
+
+    	LinearLayout btn_skip = (LinearLayout)actionBar.getCustomView().findViewById(R.id.action_skip);
+    	btn_skip.setOnClickListener(new AbcBtnClickListener());
+	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		return super.onCreateOptionsMenu(menu);
+	}
+	
+	/**
+	 * 设置状态栏
+	 * */
+	private void setScreenState(){
+		if(VERSION.SDK_INT >= VERSION_CODES.KITKAT) {
+            //透明状态栏
+            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+            //透明导航栏
+//            getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
+		}
+	}
+
+	
+	
 	
 	private void binViews(){
 		layoutInflater = LayoutInflater.from(mContext);
@@ -130,8 +182,14 @@ public class GuidSplashActivity extends Activity {
 	
 	
 	private void setContent(){
+		
+		//设置actionbar
+		setActionBar();
+		//绑定views
 		binViews();
+		//设置导航
 		setViewPagerIndicator();
+		//设置登录、注册按钮
 		setBtnView();
 		
 		this.setContentView(guidView);
@@ -200,12 +258,25 @@ public class GuidSplashActivity extends Activity {
 
 	}
 	
-	
+	//监听注册、登录
 	private class BtnClickListener implements OnClickListener{
 
 		@Override
 		public void onClick(View v) {
-			Intent intent = new Intent(mContext, RegisterAndLoginActivity.class);
-			startActivity(intent);
+			Message msg = handler.obtainMessage();
+			msg.what = GuidSplashActivity.REGIN_LOGGIN;
+			handler.sendMessage(msg);
+
+		}};
+		
+		//监听actionbar 
+		private class AbcBtnClickListener implements OnClickListener{
+
+			@Override
+			public void onClick(View v) {
+				Message msg = handler.obtainMessage();
+				msg.what = GuidSplashActivity.SKIP_GUID;
+				handler.sendMessage(msg);
+
 		}};
 }
