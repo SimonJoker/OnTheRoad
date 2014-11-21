@@ -28,12 +28,13 @@
 	        android:layout_height="0dp"
 	        android:orientation="vertical" 
 	        android:layout_weight="1"
-	        android:gravity="center">
+	        android:gravity="center_horizontal|bottom">
 	        
             <ImageView
                 android:layout_width="240dp"
                 android:layout_height="80dp"
                 android:background="#00000000"
+                android:layout_marginBottom="10dp"
                 android:src="@drawable/airbnb_logo" />
 	
 	    </LinearLayout> 
@@ -41,86 +42,223 @@
         <LinearLayout 
 	        android:layout_width="fill_parent"
 	        android:layout_height="0dp"
-	        android:layout_weight="1"
-	        android:orientation="vertical" >
-            
-            <FrameLayout 
-                android:id="@+id/sina_login"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
-                android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
-                android:layout_marginTop="20dp"
-                android:clickable="true"
-                android:background="@drawable/regin_sina_login_btn_selector">
-                <LinearLayout 
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-                    <ImageView 
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="left|center_vertical"
-	                    android:src="@drawable/weibo_logo"
-	                    android:layout_marginLeft="30dp"/>
-                </LinearLayout>
-                
-                <LinearLayout 
-                    android:layout_width="fill_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center">
-                    <TextView 
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:text="@string/regin_login_sina"
-	                    android:textSize="@dimen/regin_login_text_size"
-	                    android:textColor="@android:color/white"
-	                    android:layout_margin="@dimen/regin_login_btn_margin_size"/>
-                </LinearLayout>
-                
-                
-            </FrameLayout>
-			
-            <FrameLayout 
-                android:id="@+id/facebook_login"
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
-                android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
-                android:layout_marginTop="14dp"
-                android:clickable="true"
-                android:background="@drawable/regin_facebook_login_btn_selector">
-                
-                <LinearLayout 
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent">
-                    <TextView 
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:layout_gravity="left|center_vertical"
-						android:text="f"
-						android:textSize="30sp"
-						android:textColor="@android:color/white"
-	                    android:layout_marginLeft="30dp"/>
-                </LinearLayout>
-                
-                <LinearLayout 
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center">
-                    <TextView 
-	                    android:layout_width="wrap_content"
-	                    android:layout_height="wrap_content"
-	                    android:text="@string/regin_login_facebook"
-	                    android:textSize="@dimen/regin_login_text_size"
-	                    android:textColor="@android:color/white"
-	                    android:layout_margin="@dimen/regin_login_btn_margin_size" />
-                </LinearLayout>
-            </FrameLayout>
+	        android:layout_weight="2"
+	        android:orientation="vertical" 
+	        android:gravity="center_vertical">
             
             <LinearLayout 
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content">
-                
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <!-- sina login -->
+	            <FrameLayout 
+	                android:id="@+id/sina_login"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
+	                android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
+	                android:layout_marginTop="@dimen/regin_login_btn_margin_top"
+	                android:clickable="true"
+	                android:background="@drawable/regin_sina_login_btn_selector">
+	                <LinearLayout 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="fill_parent">
+	                    <ImageView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:layout_gravity="left|center_vertical"
+		                    android:src="@drawable/weibo_logo"
+		                    android:layout_marginLeft="30dp"/>
+	                </LinearLayout>
+	                
+	                <LinearLayout 
+	                    android:layout_width="fill_parent"
+	                    android:layout_height="match_parent"
+	                    android:gravity="center">
+	                    <TextView 
+		                    android:layout_width="wrap_content"
+		                    android:layout_height="wrap_content"
+		                    android:text="@string/regin_login_sina"
+		                    android:textSize="@dimen/regin_login_text_size"
+		                    android:textColor="@android:color/white"
+		                    android:layout_margin="@dimen/regin_login_btn_margin_size"/>
+	                </LinearLayout>
+	                
+	                
+	            </FrameLayout>
+				
+	            <!-- normal login  -->
+	            <LinearLayout 
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginTop="@dimen/regin_login_btn_margin_top"
+	                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
+	                android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
+	                android:orientation="horizontal"
+	                >
+	                <LinearLayout 
+	                    android:layout_width="0dp"
+	                	android:layout_height="wrap_content"
+	                	android:layout_weight="1">
+	                    <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                	android:layout_height="wrap_content"
+		                	android:background="@drawable/regin_login_btn_background"
+		                	android:layout_marginRight="4dp">
+		                	<LinearLayout 
+		                	    android:id="@+id/normal_regin"
+			                    android:layout_width="fill_parent"
+			                	android:layout_height="fill_parent"
+			                	android:background="@drawable/regin_normal_login_btn_selector"
+			                	android:clickable="true"
+			                	android:gravity="center">
+			                	<TextView 
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:text="@string/regin_text"
+				                    android:textSize="@dimen/regin_login_text_size"
+				                    android:textColor="@android:color/white"
+				                    android:layout_margin="@dimen/regin_login_btn_margin_size"/>
+		                	</LinearLayout>
+		                    
+		                </LinearLayout>
+	                    
+	                </LinearLayout>
+	                
+	                <LinearLayout 
+	                    android:layout_width="0dp"
+	                	android:layout_height="wrap_content"
+	                	android:layout_weight="1">
+	                    <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                	android:layout_height="wrap_content"
+		                	android:background="@drawable/regin_login_btn_background"
+		                	android:layout_marginLeft="4dp">
+		                	<LinearLayout 
+		                	    android:id="@+id/normal_login"
+			                    android:layout_width="fill_parent"
+			                	android:layout_height="fill_parent"
+			                	android:background="@drawable/regin_normal_login_btn_selector"
+			                	android:clickable="true"
+			                	android:gravity="center">
+			                	<TextView 
+			                        android:layout_width="wrap_content"
+			                        android:layout_height="wrap_content"
+			                        android:text="@string/login_text"
+				                    android:textSize="@dimen/regin_login_text_size"
+				                    android:textColor="@android:color/white"
+				                    android:layout_margin="@dimen/regin_login_btn_margin_size"/>
+		                	</LinearLayout>
+		                    
+		                </LinearLayout>
+	                    
+	                </LinearLayout>
+	            </LinearLayout>
+	            
+	            <!-- google and facebook login -->
+	            <LinearLayout 
+	                android:id="@+id/google_facebook_layout"
+	                android:layout_width="fill_parent"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
+		            android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
+	                android:orientation="vertical"
+	                android:visibility="gone">
+	                <!-- google login -->
+		            <FrameLayout 
+		                android:id="@+id/google_login"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_marginTop="@dimen/regin_login_btn_margin_top"
+		                android:clickable="true"
+		                android:background="@drawable/regin_google_login_btn_selector">
+		                
+		                <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                    android:layout_height="fill_parent">
+		                    <ImageView 
+			                    android:layout_width="wrap_content"
+			                    android:layout_height="wrap_content"
+			                    android:layout_gravity="left|center_vertical"
+			                    android:src="@drawable/google_logo"
+			                    android:layout_marginLeft="16dp"/>
+		                </LinearLayout>
+		                
+		                <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center">
+		                    <TextView 
+			                    android:layout_width="wrap_content"
+			                    android:layout_height="wrap_content"
+			                    android:text="@string/regin_login_google"
+			                    android:textSize="@dimen/regin_login_text_size"
+			                    android:textColor="@android:color/white"
+			                    android:layout_margin="@dimen/regin_login_btn_margin_size" />
+		                </LinearLayout>
+		            </FrameLayout>
+		            
+		            <!-- facebook login -->
+		            <FrameLayout 
+		                android:id="@+id/facebook_login"
+		                android:layout_width="fill_parent"
+		                android:layout_height="wrap_content"
+		                android:layout_marginTop="@dimen/regin_login_btn_margin_top"
+		                android:clickable="true"
+		                android:background="@drawable/regin_facebook_login_btn_selector">
+		                
+		                <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                    android:layout_height="fill_parent">
+		                    <TextView 
+			                    android:layout_width="wrap_content"
+			                    android:layout_height="wrap_content"
+			                    android:layout_gravity="left|center_vertical"
+								android:text="f"
+								android:textSize="30sp"
+								android:textColor="@android:color/white"
+			                    android:layout_marginLeft="30dp"/>
+		                </LinearLayout>
+		                
+		                <LinearLayout 
+		                    android:layout_width="fill_parent"
+		                    android:layout_height="wrap_content"
+		                    android:gravity="center">
+		                    <TextView 
+			                    android:layout_width="wrap_content"
+			                    android:layout_height="wrap_content"
+			                    android:text="@string/regin_login_facebook"
+			                    android:textSize="@dimen/regin_login_text_size"
+			                    android:textColor="@android:color/white"
+			                    android:layout_margin="@dimen/regin_login_btn_margin_size" />
+		                </LinearLayout>
+		                
+		            </FrameLayout>
+		            
+	            </LinearLayout>
+	            
+	            <!-- display more -->
+	            <LinearLayout 
+	                android:id="@+id/display_more"
+	                android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:layout_marginLeft="@dimen/regin_login_btn_padding_left_right"
+		            android:layout_marginRight="@dimen/regin_login_btn_padding_left_right"
+		            android:layout_marginTop="@dimen/regin_login_btn_margin_top"
+		            android:background="@drawable/regin_display_more_btn_selector"
+		            android:orientation="horizontal"
+		            android:clickable="true"
+		            android:layout_gravity="center_horizontal">
+	                <TextView 
+	                    android:layout_width="wrap_content"
+	                    android:layout_height="wrap_content"
+	                    android:text="@string/regin_login_display_more"
+	                    android:textColor="@android:color/white"
+	                    android:textSize="@dimen/regin_login_display_more_text_size"
+	                    android:layout_margin="@dimen/regin_login_btn_margin_top"
+	                    />
+	            </LinearLayout>
+   
             </LinearLayout>
             
 	    </LinearLayout>

@@ -10,12 +10,19 @@ import android.content.Context;
 import android.os.Bundle;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.Interpolator;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Toast;
@@ -29,6 +36,16 @@ public class RegisterAndLoginActivity extends Activity {
 	Context									mContext = this;
 	private PopupWindow 					mPopupWindow; 
 	
+	FrameLayout								_sinaLogin;
+	FrameLayout								_googleLogin;
+	FrameLayout								_facebookLogin;
+	LinearLayout							_noremalRegister;
+	LinearLayout							_noremalLogin;
+	LinearLayout							_displayMore;
+	
+	LinearLayout							_layoutGoogleFacebook;
+	
+	
 
 	
 	@Override
@@ -37,10 +54,40 @@ public class RegisterAndLoginActivity extends Activity {
 		setActionbar();
 		setScreenState();
 		setContentView(R.layout.regin_login);
+		
+		bindViews();
+		setContent();
+		
+	}
+	
+	
+	private void bindViews(){
+		_sinaLogin = (FrameLayout)findViewById(R.id.sina_login);
+		_googleLogin = (FrameLayout)findViewById(R.id.google_login);
+		_facebookLogin = (FrameLayout)findViewById(R.id.facebook_login);
+		_noremalRegister = (LinearLayout)findViewById(R.id.normal_regin);
+		_noremalLogin = (LinearLayout)findViewById(R.id.normal_login);
+		_displayMore = (LinearLayout)findViewById(R.id.display_more);
+		_layoutGoogleFacebook = (LinearLayout)findViewById(R.id.google_facebook_layout);
+		
+	}
+	
+	private void setContent(){
+		_displayMore.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				_displayMore.setVisibility(View.GONE);
+				setViewFadeIn(_layoutGoogleFacebook);
+				_layoutGoogleFacebook.setVisibility(View.VISIBLE);
+			}
+		});
 	}
 	
 	
 	
+	/**
+	 * 设置actionbar，自定义actionbar的布局
+	 * */
 	private void setActionbar(){
 		ActionBar actionbar = this.getActionBar();
 		actionbar.setDisplayHomeAsUpEnabled(true);
@@ -105,6 +152,8 @@ public class RegisterAndLoginActivity extends Activity {
         							, ViewGroup.LayoutParams.WRAP_CONTENT
         							, ViewGroup.LayoutParams.WRAP_CONTENT); 
         mPopupWindow.setOutsideTouchable(true);
+        
+        //监听item点击
         LinearLayout useage = (LinearLayout)popupWindow.findViewById(R.id.how_to_use);
         useage.setOnClickListener(new PopuwindowItemClickListener());
         LinearLayout serviceTerms = (LinearLayout)popupWindow.findViewById(R.id.service_terms);
@@ -118,6 +167,11 @@ public class RegisterAndLoginActivity extends Activity {
         
     } 
 	
+    
+    /**
+     * 重写activity的onTouchEvent当popuwindow弹出后
+     * activity界面中的其他人后touch动作都是popuwindow消失
+     * */
     @Override
     public boolean onTouchEvent(MotionEvent event) {
     	if (mPopupWindow != null && mPopupWindow.isShowing()) { 
@@ -127,7 +181,9 @@ public class RegisterAndLoginActivity extends Activity {
         return super.onTouchEvent(event);
     }
 	
-    
+    /**
+     * 监听popuwindow中 item的点击
+     * */
     private class PopuwindowItemClickListener implements OnClickListener{
 
 		@Override
@@ -150,5 +206,25 @@ public class RegisterAndLoginActivity extends Activity {
 			}
 			
 		}};
+		
+		private void setViewFadeIn(View view){
+			AnimationSet set = new AnimationSet(true);
+			ScaleAnimation scaleAmin = new ScaleAnimation(1.0f,1.0f,1.0f,1.0f,0.5f,0.5f);
+			set.addAnimation(scaleAmin);
+			
+
+	        int[] location = new int[2];
+	        view.getLocationOnScreen(location);
+	        int x = location[0];
+	        int y = location[1];
+	        Log.i("regin", "-------->x:"+x);
+	        Log.i("regin", "-------->y:"+y);
+	        
+	        TranslateAnimation tranAnim=new TranslateAnimation(0, 0, 100, 0);
+//	        set.addAnimation(tranAnim);  
+	        tranAnim.setDuration(900);  
+	        view.startAnimation(tranAnim); 
+			
+		}
     
 }

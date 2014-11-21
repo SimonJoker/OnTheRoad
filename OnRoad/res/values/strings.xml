@@ -43,6 +43,8 @@
     <string name="regin_login_privacy_policy">隐私政策</string>
     <string name="regin_login_sina">微博</string>
     <string name="regin_login_facebook">Facebook</string>
+    <string name="regin_login_google">谷歌</string>
+    <string name="regin_login_display_more">显示更多</string>
     
     
   

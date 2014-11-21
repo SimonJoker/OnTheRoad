@@ -33,6 +33,11 @@ import android.view.View.OnClickListener;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.AnimationSet;
+import android.view.animation.Interpolator;
+import android.view.animation.ScaleAnimation;
+import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -270,7 +275,7 @@ public class GuidSplashActivity extends Activity {
 		}};
 		
 		//监听actionbar 
-		private class AbcBtnClickListener implements OnClickListener{
+	private class AbcBtnClickListener implements OnClickListener{
 
 			@Override
 			public void onClick(View v) {
@@ -278,5 +283,9 @@ public class GuidSplashActivity extends Activity {
 				msg.what = GuidSplashActivity.SKIP_GUID;
 				handler.sendMessage(msg);
 
-		}};
+	}};
+		
+	
+	
+		
 }

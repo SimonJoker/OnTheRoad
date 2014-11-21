@@ -5,6 +5,9 @@
     <color name="md__defaultBackground">#FF555555</color>
     
     <color name="transparent">#00000000</color>
+    <color name="light_20_transparent">#20000000</color>
+    <color name="light_light_transparent">#09000000</color>
+    
     <color name="gray_transparent">#87919191</color>
     <color name="light_gray_transparent">#D3D3D3</color>
     <color name="light_transparent">#55000000</color>
@@ -32,5 +35,8 @@
 	<color name="regin_sina_login_pressed_color">#EE6A50</color>
 	<color name="regin_facebook_login_nomal_color">#4682B4</color>
 	<color name="regin_facebook_login_pressed_color">#4F94CD</color>
+	<color name="regin_google_login_nomal_color">#DD4B39</color>
+	<color name="regin_google_login_pressed_color">#F24C36</color>
+	
     
 </resources>

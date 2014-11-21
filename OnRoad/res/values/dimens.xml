@@ -28,5 +28,7 @@
     <dimen name="regin_login_text_size">20sp</dimen>
     <dimen name="regin_login_btn_margin_size">10dp</dimen>
     <dimen name="regin_login_btn_padding_left_right">16dp</dimen>
+    <dimen name="regin_login_btn_margin_top">10dp</dimen>
+    <dimen name="regin_login_display_more_text_size">16sp</dimen>
     
 </resources>

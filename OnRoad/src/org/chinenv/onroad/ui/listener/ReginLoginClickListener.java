@@ -10,11 +10,13 @@ import android.view.View.OnClickListener;
 
 public class ReginLoginClickListener implements OnClickListener {
 	
-	Activity activity;
+	Activity 				activity;
+	View					disView;
 	
 	public ReginLoginClickListener(Activity activity) {
 		this.activity = activity;
 	}
+
 
 	@Override
 	public void onClick(View v) {
