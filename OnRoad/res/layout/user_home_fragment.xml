@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#ffffffff" xmlns:app="http://schemas.android.com/apk/res/org.chinenv.onroad">
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+ 		android:scrollbars="none">
+        
+        <LinearLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center_horizontal">
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                >
+                <de.hdodenhof.circleimageview.CircleImageView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/user_home_user_icon"
+                    android:layout_width="160dp"
+                    android:layout_height="160dp"
+                    android:src="@drawable/hugh"
+                    app:border_width="2dp"
+                    app:border_color="@color/light"
+                    />
+            </LinearLayout>
+            
+            <LinearLayout 
+                android:id="@+id/look_user_info"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:layout_marginTop="10dp"
+                android:clickable="true">
+                <TextView 
+	            	android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/home_user_home_look_userInfo"
+	                android:textColor="@color/home_activity_usr_home_text_color"
+	                android:textSize="@dimen/home_activity_user_home_look_user_info_size"
+	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
+	                />
+            </LinearLayout>
+            
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+            
+            <LinearLayout 
+                android:id="@+id/user_setting"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
+                <TextView 
+	            	android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/home_user_home_user_setting"
+	                android:textColor="@color/home_activity_usr_home_text_color"
+	                android:textSize="@dimen/home_activity_user_home_content_size"
+	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
+	                />
+            </LinearLayout>
+            
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+            
+            <LinearLayout 
+                android:id="@+id/like_this"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
+                <TextView 
+	            	android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/home_user_home_like_this"
+	                android:textColor="@color/home_activity_usr_home_text_color"
+	                android:textSize="@dimen/home_activity_user_home_content_size"
+	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
+	                />
+            </LinearLayout>
+            
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+            
+            <FrameLayout 
+                android:id="@+id/how_use_this"
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:clickable="true"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
+             	<ImageView 
+             	    android:layout_width="match_parent"
+             	    android:layout_height="match_parent"
+             	    android:src="@drawable/appintro2"
+             	    android:scaleType="centerCrop"/>
+             	<LinearLayout 
+             	    android:layout_width="match_parent"
+             	    android:layout_height="match_parent"
+             	    android:gravity="center">
+             	    <TextView 
+		            	android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:text="@string/home_user_home_how_to_use"
+		                android:textColor="@color/home_activity_usr_home_text_color"
+		                android:textSize="@dimen/home_activity_user_home_content_size"
+	                	/>
+             	</LinearLayout>
+                
+            </FrameLayout>
+		    
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginTop="10dp"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+		    
+            <LinearLayout 
+                android:id="@+id/service_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
+                <TextView 
+	            	android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/home_user_home_service_item"
+	                android:textColor="@color/home_activity_usr_home_text_color"
+	                android:textSize="@dimen/home_activity_user_home_content_size"
+	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
+	                />
+            </LinearLayout>
+            
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+		    
+            <LinearLayout 
+                android:id="@+id/privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/user_home_fragment_user_info_text_selector"
+                android:clickable="true"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
+                <TextView 
+	            	android:layout_width="wrap_content"
+	                android:layout_height="wrap_content"
+	                android:text="@string/home_user_home_privacy_policy"
+	                android:textColor="@color/home_activity_usr_home_text_color"
+	                android:textSize="@dimen/home_activity_user_home_content_size"
+	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
+	                />
+            </LinearLayout>
+            
+            <LinearLayout 
+		        android:layout_width="match_parent"
+		        android:layout_height="1px"
+		        android:background="@color/discover_fragment_divider_color"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+		    </LinearLayout>
+            
+            <LinearLayout 
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="40dp"
+                android:gravity="center">
+                <LinearLayout 
+		        	android:layout_width="fill_parent"
+		           	android:layout_height="wrap_content"
+		            android:background="@drawable/user_home_fragment_logout_btn_background">
+		            <LinearLayout 
+		            	android:id="@+id/logout"
+			            android:layout_width="fill_parent"
+			            android:layout_height="fill_parent"
+			            android:background="@drawable/user_home_fragment_user_info_text_selector"
+			            android:clickable="true"
+			            android:gravity="center">
+			           	<TextView 
+			            	android:layout_width="wrap_content"
+			                android:layout_height="wrap_content"
+			                android:text="@string/home_user_home_logout"
+				            android:textSize="@dimen/home_activity_user_home_content_size"
+				            android:textColor="@color/home_activity_usr_home_text_color"
+				           	android:layout_margin="@dimen/regin_login_btn_margin_size"/>
+		         	</LinearLayout>
+		                    
+		    	</LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

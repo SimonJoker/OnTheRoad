@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" 
-    android:background="@drawable/home_menu_bg">
+    android:background="@drawable/home_menu_bg" xmlns:app="http://schemas.android.com/apk/res/org.chinenv.onroad">
     
     <LinearLayout 
         android:layout_width="match_parent"
@@ -59,7 +59,7 @@
 	                        android:layout_width="wrap_content"
 	                        android:layout_height="wrap_content"
 	                        android:text="@string/home_menu_seek"
-	                        android:textColor="@color/home_menu_text_color_red"
+	                        android:textColor="@color/home_menu_item_text_color"
 	                        android:textSize="@dimen/home_activity_item_text_size"
 	                        android:layout_marginLeft="@dimen/home_activity_text_margin_left"
 	                        android:layout_marginTop="@dimen/home_activity_text_margin_top"
@@ -68,7 +68,7 @@
 	                </LinearLayout>
 	                
 	                <LinearLayout 
-	                    android:id="@+id/menu_discover"
+	                    android:id="@+id/menu_handpick"
 	                    android:layout_width="match_parent"
 	                    android:layout_height="wrap_content"
 	                    android:background="@drawable/menu_item_selector_bg_to_gray"
@@ -76,8 +76,8 @@
 	                    <TextView 
 	                        android:layout_width="wrap_content"
 	                        android:layout_height="wrap_content"
-	                        android:text="@string/home_menu_discover"
-	                        android:textColor="@color/home_menu_item_text_color"
+	                        android:text="@string/home_menu_handpick"
+	                        android:textColor="@color/home_menu_text_color_red"
 	                        android:textSize="@dimen/home_activity_item_text_size"
 	                        android:layout_marginLeft="@dimen/home_activity_text_margin_left"
 	                        android:layout_marginTop="@dimen/home_activity_text_margin_top"
@@ -200,11 +200,9 @@
 	                        android:layout_marginBottom="@dimen/home_activity_text_margin_top"/>
 	                    
 	                </LinearLayout>
-	                
-	                
+
                 </LinearLayout>
-                
-                
+  
             </ScrollView>
 	        
 	    </LinearLayout>
@@ -220,27 +218,69 @@
 	            android:layout_height="1dp"
 	            android:background="@color/home_menu_divider_color">
 	            
-	        </LinearLayout>        
+	        </LinearLayout> 
 	        
-			<LinearLayout 
-			    android:id="@+id/login_btn"
-	            android:layout_width="match_parent"
-	            android:layout_height="wrap_content"
-	            android:background="@drawable/menu_item_selector_bg_to_gray"
-	            android:clickable="true">
-	            <TextView
-		            android:layout_width="wrap_content"
+			<FrameLayout 
+			    android:layout_width="match_parent"
+	            android:layout_height="wrap_content">
+                <LinearLayout 
+				    android:id="@+id/login_layout"
+		            android:layout_width="match_parent"
 		            android:layout_height="wrap_content"
-		            android:layout_marginLeft="@dimen/home_activity_text_margin_left"
-		            android:layout_marginTop="16dp"
-		            android:layout_marginBottom="16dp"
-		            android:text="@string/home_menu_reginOrlogin"
-		            android:textColor="@color/home_menu_text_color_red"
-		            android:textSize="@dimen/home_activity_item_text_size"/>
-	        </LinearLayout>      
-	        
-	
+		            android:background="@drawable/menu_item_selector_bg_to_gray"
+		            android:clickable="true">
+		            <TextView
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_marginLeft="@dimen/home_activity_text_margin_left"
+			            android:layout_marginTop="14dp"
+			            android:layout_marginBottom="14dp"
+			            android:text="@string/home_menu_reginOrlogin"
+			            android:textColor="@color/home_menu_text_color_red"
+			            android:textSize="@dimen/home_activity_item_text_size"/>
+		        </LinearLayout>   
+		        
+                <LinearLayout
+				    android:id="@+id/has_logined"
+		            android:layout_width="match_parent"
+		            android:layout_height="wrap_content"
+		            android:background="@drawable/menu_item_selector_bg_to_gray"
+		            android:clickable="true"
+		           	android:visibility="gone"
+		            android:orientation="horizontal"
+		            android:gravity="center_vertical">
+		            
+                    
+                    <de.hdodenhof.circleimageview.CircleImageView 
+                        xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:id="@+id/user_icon"
+                        android:layout_width="46dp"
+                        android:layout_height="46dp"
+                        android:layout_centerInParent="true"
+                        android:layout_marginLeft="10dp"
+                        android:src="@drawable/hugh"
+                        app:border_width="2dp"
+                        app:border_color="@color/light"
+                        />
+	                    
+
+		            <TextView
+		                android:id="@+id/user_name"
+			            android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:layout_marginTop="14dp"
+			            android:layout_marginBottom="14dp"
+			            android:text="@string/home_menu_reginOrlogin"
+			            android:layout_marginLeft="10dp"
+			            android:textColor="@color/home_menu_item_text_color"
+			            android:textSize="18sp"/>
+		            
+		        </LinearLayout>
+ 
+			</FrameLayout>
+
 	    </LinearLayout>
+	    
     </LinearLayout>
   
 </LinearLayout>

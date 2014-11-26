@@ -15,12 +15,29 @@
     <string name="home_menu_discover">发现</string>
     <string name="home_menu_seek">搜索</string>
     <string name="home_menu_usage">如何使用This</string>
-    <string name="home_menu_rentout">出租</string>
-    <string name="home_menu_pub">发布</string>
-    <string name="home_menu_why_pub">为什么要发布？</string>
+    <string name="home_menu_rentout">个人</string>
+    <string name="home_menu_pub">心愿单</string>
+    <string name="home_menu_why_pub">成长烙印</string>
     <string name="home_menu_setting">设置</string>
     <string name="home_menu_help">帮助</string>
     <string name="home_menu_reginOrlogin">注册或登录</string>
+    
+    <string name="home_menu_handpick">精选</string>
+    
+   <!--  用户 主页 -->
+    <string name="home_user_home_ab_title">账号</string>
+    <string name="home_user_home_look_userInfo">查看个人资料</string>
+    <string name="home_user_home_user_setting">设置</string>
+    <string name="home_user_home_like_this">喜欢走起？</string>
+    <string name="home_user_home_how_to_use">喜欢走起？</string>
+    <string name="home_user_home_service_item">服务条款</string>
+    <string name="home_user_home_privacy_policy">隐私政策</string>
+    <string name="home_user_home_logout">退出</string>
+    
+    
+    
+    
+    
 
    <!--  引导页 -->
     <string name="guide_btn_text">立即体验</string>
@@ -34,6 +51,7 @@
     <string name="guide_content_third">联系房东、确认旅行日期、支付一切都能通过Airbnb值得醒来的服务完成。</string>
     <string name="guide_content_fourth">您可以在旅途中随时随地了解您的房东、让他们为您提供一些当地建议，并查看您的行程单。</string>
     
+   <!-- 	注册登陆 -->
     <string name="regin_text">注册</string>
     <string name="login_text">登录</string>
     <string name="skip_text">跳过</string>
@@ -45,8 +63,15 @@
     <string name="regin_login_facebook">Facebook</string>
     <string name="regin_login_google">谷歌</string>
     <string name="regin_login_display_more">显示更多</string>
+    <string name="regin_login_atuth_title">授权OnRoad</string>
     
+   	<!--  发现页 -->
+    <string name="discover_input_hint_text">想去哪里？</string>
+    <string name="discover_fragment_current_text">当前位置</string>
+    <string name="discover_fragment_begin_search">开始搜索</string>
+    <string name="discover_fragment_guid_text_one">年幼时，父母是我们的领路人</string>
+    <string name="discover_fragment_guid_text_two">现在，轮到我们来领路了</string>
+    <string name="discover_fragment_guid_text_three">开始出发吧！</string>
     
-  
     
 </resources>

@@ -1,15 +1,20 @@
 package org.chinenv.onroad.ui.activity;
 
+import org.chinenv.onroad.HomeActivity;
 import org.chinenv.onroad.R;
 import org.chinenv.onroad.ui.listener.ReginLoginClickListener;
 import org.chinenv.onroad.util.ToastHelper;
 
+import cn.sharesdk.framework.Platform;
+import cn.sharesdk.framework.ShareSDK;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -29,9 +34,12 @@ import android.widget.Toast;
 
 public class RegisterAndLoginActivity extends Activity {
 	
+	private static final Integer SINA = 111;
+	private static final Integer QQ = 222;
+	
+	private int								PART = 0;
 	
 	
-	ReginLoginClickListener   				clickListener = new ReginLoginClickListener(this);
 	
 	Context									mContext = this;
 	private PopupWindow 					mPopupWindow; 
@@ -46,11 +54,42 @@ public class RegisterAndLoginActivity extends Activity {
 	LinearLayout							_layoutGoogleFacebook;
 	
 	
+	Handler									handler = new Handler(){
+		public void handleMessage(android.os.Message msg) {
+			Platform platform = (Platform) msg.obj;
+			switch (msg.arg1) {
+			case 1:
+				Intent intent = new Intent(mContext, HomeActivity.class);
+				Bundle data = new Bundle();
+				data.putBoolean("FLAG", true);
+//				data.putString("PART", platform.getName());
+				intent.putExtras(data);
+				startActivity(intent);
+				finish();
+				break;
+			case 2:
+				ToastHelper.showShort(mContext, platform.getName()+"登陆已取消！");
+				break;
+			case 3:
+				ToastHelper.showShort(mContext, platform.getName()+"登陆失败！");
+				break;
+			default:
+				break;
+			}
+			
+		};
+	};
+	
+	ReginLoginClickListener   				clickListener = 
+			new ReginLoginClickListener(this,handler);
 
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		//在第一个activity对sharesdk作全局的初始化
+		ShareSDK.initSDK(this);
+				
 		setActionbar();
 		setScreenState();
 		setContentView(R.layout.regin_login);
@@ -63,6 +102,7 @@ public class RegisterAndLoginActivity extends Activity {
 	
 	private void bindViews(){
 		_sinaLogin = (FrameLayout)findViewById(R.id.sina_login);
+		_sinaLogin.setOnClickListener(clickListener);
 		_googleLogin = (FrameLayout)findViewById(R.id.google_login);
 		_facebookLogin = (FrameLayout)findViewById(R.id.facebook_login);
 		_noremalRegister = (LinearLayout)findViewById(R.id.normal_regin);
@@ -218,9 +258,8 @@ public class RegisterAndLoginActivity extends Activity {
 	        int x = location[0];
 	        int y = location[1];
 	        Log.i("regin", "-------->x:"+x);
-	        Log.i("regin", "-------->y:"+y);
-	        
-	        TranslateAnimation tranAnim=new TranslateAnimation(0, 0, 100, 0);
+	        Log.i("regin", "-------->y:"+y);	        
+	        TranslateAnimation tranAnim=new TranslateAnimation(0, 0, 50, 0);
 //	        set.addAnimation(tranAnim);  
 	        tranAnim.setDuration(900);  
 	        view.startAnimation(tranAnim); 

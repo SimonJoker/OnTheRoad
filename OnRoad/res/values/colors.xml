@@ -12,6 +12,8 @@
     <color name="light_gray_transparent">#D3D3D3</color>
     <color name="light_transparent">#55000000</color>
     
+    <color name="light">#FFEEEEEE</color>
+    
     
    	<!--  home activity menu color -->
     <color name="home_menu_divider_color">#87B5B5B5</color>
@@ -21,6 +23,10 @@
     
     <color name="home_content_text_color_white">#87ffffff</color>
     
+    <!--  home activity menu color -->
+    <color name="home_activity_usr_home_text_color">#726f83</color>
+    
+
    <!--  guid page text clolor -->
     <color name="guid_btn_text_color">#ffffff</color>
     <color name="guid_content_text_color">#ffffff</color>
@@ -38,5 +44,10 @@
 	<color name="regin_google_login_nomal_color">#DD4B39</color>
 	<color name="regin_google_login_pressed_color">#F24C36</color>
 	
+	<color name="sina_auth_title_text_color">#87A8A8A8</color>
+	
+	<!-- discover fragment --> 
+	<color name="discover_fragment_text_color">#726f83</color>
+	<color name="discover_fragment_divider_color">#87B5B5B5</color>
     
 </resources>

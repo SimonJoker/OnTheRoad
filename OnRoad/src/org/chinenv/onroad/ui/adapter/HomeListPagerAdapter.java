@@ -41,7 +41,7 @@ public class HomeListPagerAdapter extends PagerAdapter {
 	public Object instantiateItem(ViewGroup container, int position) {
 		Context mContext = container.getContext();
 		View view = LayoutInflater.from(mContext)
-				.inflate(R.layout.home_activity_content_pager_cell, null);
+				.inflate(R.layout.handpick_fragment_content_pager_cell, null);
 		ImageView image = (ImageView)view.findViewById(R.id.image);
 		Log.i("MyAdapter", "------>(StaticData.getDrawble().get(num))[position]"+(StaticData.getDrawble().get(num))[position]);
 		image.setImageResource((StaticData.getDrawble().get(num))[position]);

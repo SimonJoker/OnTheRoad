@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:orientation="vertical"
+    android:background="#FFFFFF">
+	
+    <LinearLayout 
+        android:id="@+id/current_location"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/discover_fragment_current_selector"
+        android:clickable="true">
+        
+        <TextView 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+            android:text="@string/discover_fragment_current_text"
+            android:textSize="@dimen/discover_fragment_content_current_text_size"
+            android:textColor="@color/discover_fragment_text_color"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            />
+        <LinearLayout 
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center_vertical|right">
+            <ImageView
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:src="@drawable/icon_next"
+	            android:layout_marginRight="16dp"/>
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:background="@color/discover_fragment_divider_color"
+        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
+    </LinearLayout>
+    
+    <FrameLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+        <LinearLayout 
+            android:id="@+id/no_search"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="60dp">
+			<ImageView 
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:background="#00000000"
+               android:src="@drawable/discover_fragment_logo"
+               /> 
+               
+			<LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="16dp"
+			    android:layout_marginRight="@dimen/discover_fragment_margin_leftright"
+		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		        android:gravity="center">
+				
+			    <TextView 
+			       android:layout_width="wrap_content"
+			       android:layout_height="wrap_content"
+			       android:text="@string/discover_fragment_begin_search"
+				   android:textSize="@dimen/discover_fragment_content_text_size"
+				   android:textColor="@color/discover_fragment_text_color"
+				   android:layout_margin="@dimen/discover_fragment_content_guid_text_margin"/>
+    
+			</LinearLayout>
+			
+			<LinearLayout 
+			    android:layout_width="match_parent"
+			    android:layout_height="wrap_content"
+			    android:layout_marginTop="10dp"
+			    android:orientation="vertical">
+				<LinearLayout 
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginRight="@dimen/discover_fragment_margin_leftright"
+		            android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		            android:gravity="center"
+				    >
+		            <TextView 
+			        	android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/discover_fragment_guid_text_one"
+				        android:textSize="@dimen/discover_fragment_content_guid_text_size"
+				        android:textColor="@color/discover_fragment_text_color"
+				        android:layout_marginTop="@dimen/discover_fragment_content_guid_text_margin"
+				        android:layout_marginBottom="@dimen/discover_fragment_content_guid_text_margin"/>
+				    
+				</LinearLayout>
+				<LinearLayout 
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginRight="@dimen/discover_fragment_margin_leftright"
+		            android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		            android:gravity="center"
+				    >
+		            <TextView 
+			        	android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/discover_fragment_guid_text_two"
+				        android:textSize="@dimen/discover_fragment_content_guid_text_size"
+				        android:textColor="@color/discover_fragment_text_color"
+				        android:layout_marginTop="@dimen/discover_fragment_content_guid_text_margin"
+				        android:layout_marginBottom="@dimen/discover_fragment_content_guid_text_margin"/>
+				    
+				</LinearLayout>
+				<LinearLayout 
+				    android:layout_width="match_parent"
+				    android:layout_height="wrap_content"
+				    android:layout_marginRight="@dimen/discover_fragment_margin_leftright"
+		            android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
+		            android:gravity="center"
+				    >
+		            <TextView 
+			        	android:layout_width="wrap_content"
+			            android:layout_height="wrap_content"
+			            android:text="@string/discover_fragment_guid_text_three"
+				        android:textSize="@dimen/discover_fragment_content_guid_text_size"
+				        android:textColor="@color/discover_fragment_text_color"
+				        android:layout_marginTop="@dimen/discover_fragment_content_guid_text_margin"
+				        android:layout_marginBottom="@dimen/discover_fragment_content_guid_text_margin"/>
+				    
+				</LinearLayout>
+			    
+			</LinearLayout>
+                 
+
+        </LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/search_list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            android:orientation="vertical">
+			
+            <ListView 
+                android:id="@+id/search_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null">
+                
+            </ListView>
+
+        </LinearLayout>
+        
+    </FrameLayout>
+    
+</LinearLayout>

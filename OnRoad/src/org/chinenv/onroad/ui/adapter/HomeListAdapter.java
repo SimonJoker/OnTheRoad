@@ -42,7 +42,7 @@ public class HomeListAdapter extends BaseAdapter {
 	@Override
 	public View getView(int position, View convertView, ViewGroup parent) {
 		convertView = LayoutInflater.from(mContext)
-				.inflate(R.layout.home_activity_content_list_item, parent, false);
+				.inflate(R.layout.handpick_fragment_content_list_item, parent, false);
 		LoopViewPager loopPger = (LoopViewPager)convertView.findViewById(R.id.pager);
 		HomeListPagerAdapter pagerAdapter = new HomeListPagerAdapter(position);
 		loopPger.setAdapter(pagerAdapter);

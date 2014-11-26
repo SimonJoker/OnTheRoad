@@ -1,16 +1,11 @@
 package org.chinenv.onroad.ui.activity;
 
-import java.io.File;
-import java.util.Timer;
-import java.util.TimerTask;
-
 import org.chinenv.onroad.HomeActivity;
 import org.chinenv.onroad.R;
 import org.chinenv.onroad.bean.GudidPageDatas;
 import org.chinenv.onroad.ui.adapter.GuidViewPagerAdapter;
 import org.chinenv.onroad.util.JudgeIsFirstUseUtil;
 
-import android.R.layout;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -21,25 +16,17 @@ import android.os.Handler;
 import android.os.Message;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v4.widget.SearchViewCompat.OnCloseListenerCompat;
 import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationSet;
-import android.view.animation.Interpolator;
-import android.view.animation.ScaleAnimation;
-import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import cn.sharesdk.framework.ShareSDK;
 
 import com.viewpagerindicator.CirclePageIndicator;
 
@@ -80,7 +67,7 @@ public class GuidSplashActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		
+
 		//设置状态栏透明
 		setScreenState();
 		//设置handler来出来动作监听结果的跳转

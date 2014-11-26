@@ -14,21 +14,44 @@
     
     <dimen name="home_activity_title_text_size">18sp</dimen>
     <dimen name="home_activity_item_text_size">20sp</dimen>
+    <dimen name="home_activity_ab_title_text_size">20sp</dimen>
 
     <!-- home activity content text size -->
     <dimen name="home_activity_content_city_size">36sp</dimen>
     <dimen name="home_activity_content_description_size">20sp</dimen>
     
+    <!-- home activity user home text size -->
+    <dimen name="home_activity_user_home_look_user_info_size">12sp</dimen>
+    <dimen name="home_activity_user_home_content_size">16sp</dimen>
+    
+    <!-- home activity user home margin size -->
+    <dimen name="home_activity_user_home_look_user_info_margin">10dp</dimen>
+    <dimen name="home_activity_user_home_margin_leftright">20dp</dimen>
+    
+    
+    
     <!-- guid pages text size -->
     <dimen name="guid_title_text_size">24sp</dimen>
     <dimen name="guid_content_text_size">20sp</dimen>
-    
     <dimen name="guid_regin_text_size">20sp</dimen>
+    
+    <!-- regin login page -->
     <dimen name="regin_popu_list_text_size">14sp</dimen>
     <dimen name="regin_login_text_size">20sp</dimen>
     <dimen name="regin_login_btn_margin_size">10dp</dimen>
     <dimen name="regin_login_btn_padding_left_right">16dp</dimen>
     <dimen name="regin_login_btn_margin_top">10dp</dimen>
     <dimen name="regin_login_display_more_text_size">16sp</dimen>
+    
+    
+    <dimen name="auth_page_ab_title_size">26dp</dimen>
+    
+    <!-- discover fragment -->
+    <dimen name="discover_fragment_margin_leftright">20dp</dimen>
+    <dimen name="discover_fragment_content_current_text_size">16sp</dimen>
+    <dimen name="discover_fragment_content_text_size">20sp</dimen>
+    <dimen name="discover_fragment_content_guid_text_size">12sp</dimen>
+    <dimen name="discover_fragment_content_guid_text_margin">4dp</dimen>
+    
     
 </resources>
