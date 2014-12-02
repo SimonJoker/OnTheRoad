@@ -9,6 +9,8 @@ import org.chinenv.onroad.ui.activity.RegisterAndLoginActivity;
 import org.chinenv.onroad.ui.fragment.DiscoverFragment;
 import org.chinenv.onroad.ui.fragment.HandpickFragment;
 import org.chinenv.onroad.ui.fragment.UserHomeFragment;
+import org.chinenv.onroad.ui.fragment.UserWishListFragment;
+import org.chinenv.onroad.util.LoginKeeperHelper;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -40,6 +42,7 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
         Fragment discoverFragment = fm.findFragmentByTag(DiscoverFragment.TAG);
         Fragment handpickFragment = fm.findFragmentByTag(HandpickFragment.TAG);
         Fragment userhomeFragment = fm.findFragmentByTag(UserHomeFragment.TAG);
+        Fragment wishlistFragment = fm.findFragmentByTag(UserWishListFragment.TAG);
         
         FragmentTransaction ft = fm.beginTransaction();	         
         if(discoverFragment!=null)        	
@@ -47,9 +50,13 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
 
 		if (handpickFragment != null)
 			ft.hide(handpickFragment);
-		
+
 		if (userhomeFragment != null)
 			ft.hide(userhomeFragment);
+		
+		if (wishlistFragment != null)
+			ft.hide(wishlistFragment);
+		
 
 		switch (v.getId()) {
 		case R.id.menu_seek:
@@ -76,6 +83,15 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
     		}
 			setActionbar(R.id.menu_seek);
 			break;
+			
+		case R.id.menu_wish_list:
+			if (wishlistFragment == null) {
+    			ft.add(R.id.frameLayout_home_content, new UserWishListFragment(), UserWishListFragment.TAG);
+    		} else {
+    			ft.show(wishlistFragment);
+    		}
+			setActionbar(R.id.menu_wish_list);
+			break;
 		
 		case R.id.has_logined:
 			if (userhomeFragment == null) {
@@ -84,6 +100,17 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
     			ft.show(userhomeFragment);
     		}
 			setActionbar(R.id.has_logined);
+			break;
+			
+		case R.id.logout: //账户界面退出登录,返回到主页
+			logout();
+			((HomeActivity) activity).setLoginUserInfo();
+			if (handpickFragment == null) {
+    			ft.add(R.id.frameLayout_home_content, new HandpickFragment(), HandpickFragment.TAG);
+    		} else {
+    			ft.show(handpickFragment);
+    		}
+			setActionbar(R.id.menu_handpick);
 			break;
 		default:
 			break;
@@ -94,7 +121,7 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
 
 	}
 	
-	
+	//根据不同的fragment内容加载不同的actionbar
 	private void setActionbar(int viewID){
 		android.app.ActionBar actionBar = activity.getActionBar(); 
     	actionBar.setCustomView(R.layout.custom_home_menu);
@@ -126,6 +153,13 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
 			});
 			break;
 			
+		case R.id.menu_wish_list:
+			abTitlLayout.setVisibility(View.VISIBLE);
+			abDiscover.setVisibility(View.GONE);
+			discoverInput.setVisibility(View.GONE);
+			abTitle.setText(R.string.home_menu_wish_list_btn);
+			break;
+			
 		case R.id.has_logined:
 			abTitlLayout.setVisibility(View.VISIBLE);
 			abDiscover.setVisibility(View.GONE);
@@ -137,4 +171,10 @@ public class HomeMenuItemFragmentClickListener implements OnClickListener {
 		}
 			
 	}
+	
+	//清理登录状态数据库
+	private void logout(){
+    	LoginKeeperHelper.clearLoginStatus(activity);
+    	
+    }
 }

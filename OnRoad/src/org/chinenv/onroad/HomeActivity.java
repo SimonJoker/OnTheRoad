@@ -23,7 +23,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.ActionBar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -64,11 +63,9 @@ public class HomeActivity extends Activity {
     
     private LinearLayout					_menuSeek;
     private LinearLayout					_mennuHandpick;
-    private LinearLayout					_menuHowUse;
-    private LinearLayout					_menuPublish;
-    private LinearLayout					_menuWhyPub;
+    private LinearLayout					_menuWishList;
+
     private LinearLayout					_menuSetting;
-    private LinearLayout					_menuHelp;
     private LinearLayout					_menuLogin;
     private LinearLayout					_menuHasLogined;
     
@@ -110,7 +107,7 @@ public class HomeActivity extends Activity {
         super.onCreate(inState);    
         initImageLoader(this);
         ShareSDK.initSDK(this);
-        isLogined = LoginKeeperHelper.readLoginPartName(this).equals(null) ? false : true;
+        
         
         mDrawer = MenuDrawer.attach(this, MenuDrawer.Type.OVERLAY);
 
@@ -130,6 +127,7 @@ public class HomeActivity extends Activity {
         mDrawer.setSlideDrawable(R.drawable.icon_more);
         mDrawer.setDrawerIndicatorEnabled(true);
         mDrawer.peekDrawer(1000, 0);
+        mDrawer.closeMenu();
         
         setLisenerOfDrawer();
         bindViews();
@@ -137,15 +135,26 @@ public class HomeActivity extends Activity {
     }
     
     //根据登陆状态改变登陆view
-    private void setLoginUserInfo(){
+    public void setLoginUserInfo(){
+    	isLogined = LoginKeeperHelper.readLoginStatus(this);
+    	
+    	_menuWishList = (LinearLayout)menuView.findViewById(R.id.menu_wish_list);
+    	
     	_menuLogin = (LinearLayout)findViewById(R.id.login_layout);
     	_menuHasLogined = (LinearLayout)findViewById(R.id.has_logined);
-    	
+
     	CircleImageView userIcon = (CircleImageView)findViewById(R.id.user_icon);
     	TextView userName = (TextView)findViewById(R.id.user_name);
 
     	if (isLogined) {
+    		_menuWishList.setVisibility(View.VISIBLE);
+    		_menuWishList.setClickable(true);
     		setLoginView(userIcon, userName);
+		}else {
+			_menuWishList.setVisibility(View.GONE);
+			_menuWishList.setClickable(false);
+			_menuLogin.setVisibility(View.VISIBLE);
+			_menuHasLogined.setVisibility(View.GONE);
 		}
     	
     }
@@ -161,7 +170,6 @@ public class HomeActivity extends Activity {
 		ImageLoader.getInstance().displayImage(iconURl, userIcon
 						, iconOption.getUserIconOptions(), animateFirstListener);
 		userName.setText(partPlatform.getDb().getUserName());
-		Log.i(TAG, "------>userName:"+partPlatform.getDb().getUserName());
     }
     
     
@@ -177,20 +185,12 @@ public class HomeActivity extends Activity {
     	
     	//activity跳转
     	menuItemListener = new HomeMenuItenIntentClikListener(this);
-    	_menuHowUse = (LinearLayout)menuView.findViewById(R.id.menu_usage);
-    	_menuHowUse.setOnClickListener(menuItemListener);
-    	
-    	_menuPublish = (LinearLayout)menuView.findViewById(R.id.menu_pub);
-    	_menuPublish.setOnClickListener(menuItemListener);
-    	
-    	_menuWhyPub = (LinearLayout)menuView.findViewById(R.id.menu_why_pub);
-    	_menuWhyPub.setOnClickListener(menuItemListener);
-    	
+
+    	_menuWishList.setOnClickListener(menuFragmentListener);
+
     	_menuSetting = (LinearLayout)menuView.findViewById(R.id.menu_setting);
     	_menuSetting.setOnClickListener(menuItemListener);
     	
-    	_menuHelp = (LinearLayout)menuView.findViewById(R.id.menu_help);
-    	_menuHelp.setOnClickListener(menuItemListener);
     	
     	_menuLogin = (LinearLayout)menuView.findViewById(R.id.login_layout);
     	_menuLogin.setOnClickListener(menuItemListener);
@@ -198,7 +198,8 @@ public class HomeActivity extends Activity {
     	_menuHasLogined.setOnClickListener(menuFragmentListener);
     }
     
-   //
+
+
     private void setActionBar(){
     	android.app.ActionBar actionBar = this.getActionBar(); 
     	actionBar.setCustomView(R.layout.custom_home_menu);

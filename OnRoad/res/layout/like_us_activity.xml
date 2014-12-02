@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="@drawable/lmb_discover_bg">
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="140dp"
+        android:gravity="center_horizontal">
+        
+        <LinearLayout 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/like_this_activity_margin_leftright"
+            android:layout_marginRight="@dimen/like_this_activity_margin_leftright">
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/like_this_title_text"
+                android:textSize="14sp"
+                android:textColor="@color/like_this_text_color_white"/>
+        </LinearLayout>
+        
+        <LinearLayout 
+			android:layout_width="match_parent"
+		    android:layout_height="1px"
+		    android:background="#99ffffff"
+		    android:layout_marginTop="30dp"
+		    android:layout_marginLeft="@dimen/like_this_activity_margin_leftright"
+		    android:layout_marginRight="@dimen/like_this_activity_margin_leftright">
+		</LinearLayout>
+        
+        <LinearLayout
+            android:id="@+id/btn_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/like_this_activity_ok_btn_selector"
+            android:layout_marginLeft="@dimen/like_this_activity_margin_leftright"
+            android:layout_marginRight="@dimen/like_this_activity_margin_leftright"
+            android:gravity="center"
+            android:clickable="true">
+            
+            <TextView 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/like_this_OK_text"
+                android:textSize="@dimen/like_this_activity_content_current_text_size"
+                android:textColor="@color/like_this_text_color_white"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"/>
+            
+        </LinearLayout>
+        
+        <LinearLayout 
+			android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:background="@drawable/like_this_no_btn_round"
+		    android:layout_marginTop="20dp"
+		    android:layout_marginLeft="@dimen/like_this_activity_margin_leftright"
+            android:layout_marginRight="@dimen/like_this_activity_margin_leftright"
+            android:layout_marginBottom="20dp">
+		   	<LinearLayout 
+		    	android:id="@+id/btn_no"
+			    android:layout_width="fill_parent"
+			    android:layout_height="fill_parent"
+			    android:background="@drawable/like_this_no_btn_selector"
+			    android:clickable="true"
+			    android:gravity="center">
+			    <TextView 
+			    	android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="@string/like_this_NO_text"
+				    android:textSize="@dimen/like_this_activity_content_current_text_size"
+				    android:textColor="@android:color/white"
+				    android:layout_margin="10dp"/>
+		 	</LinearLayout>
+		                    
+		</LinearLayout>
+        
+    </LinearLayout>
+    
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="bottom">
+        <LinearLayout
+	    	android:id="@+id/btn_back"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_marginTop="20dp"
+	        android:background="@drawable/like_this_no_btn_selector"
+	        android:layout_marginLeft="@dimen/like_this_activity_margin_leftright"
+	        android:layout_marginRight="@dimen/like_this_activity_margin_leftright"
+	        android:layout_marginBottom="40dp"
+	        android:gravity="center"
+	        android:clickable="true">
+	            
+	        <ImageView 
+	        	android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+				android:src="@drawable/icon_like_this_cancle"
+	            android:layout_marginTop="10dp"
+	            android:layout_marginBottom="10dp"/>
+            
+		</LinearLayout>	
+        
+    </LinearLayout>
+
+</LinearLayout>

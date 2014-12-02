@@ -8,12 +8,10 @@ import org.chinenv.onroad.ui.listener.HomeMenuItemFragmentClickListener;
 import android.app.Activity;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.ListView;
 
 public class HandpickFragment extends Fragment {
@@ -65,13 +63,10 @@ public class HandpickFragment extends Fragment {
     	_mList.setAdapter(mAdapter);
     	
     }
-    
 
-    
     private void setActionBar(){
     	Log.i(TAG, "---->setActionBar");
     	android.app.ActionBar actionBar = _activity.getActionBar(); 
-
 		((HomeActivity) _activity).getMenuDrawer().setSlideDrawable(R.drawable.icon_more);	
 
 	}

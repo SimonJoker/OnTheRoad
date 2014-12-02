@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <ImageView 
+        android:id="@+id/user_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/theme_list_activity_margin_leftright"
+        android:layout_marginRight="@dimen/theme_list_activity_margin_leftright"
+        android:scaleType="centerCrop"/>
+
+    <LinearLayout
+        android:id="@+id/pager_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:orientation="vertical"
+        android:background="@drawable/home_content_btn_selector"
+        >
+        
+    </LinearLayout>
+</FrameLayout>

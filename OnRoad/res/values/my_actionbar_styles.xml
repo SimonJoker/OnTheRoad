@@ -1,5 +1,13 @@
 
 <resources xmlns:android="http://schemas.android.com/apk/res/android">
+    
+    <style name="MainPageThemeNoAB" parent="@android:style/Theme.Holo.Light" type="text/css" >
+        <item name="android:displayOptions">useLogo</item>
+        <item name="android:actionBarStyle">@style/MyWhiteActionBar </item>
+ 	    <item name="android:background">#00000000</item>   
+    </style>
+    
+    
     <style name="CustomActionBarTheme" parent="@android:style/Theme.Holo.Light" type="text/css">
         <item name="android:actionBarStyle">@style/MyActionBar </item>
         <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
@@ -35,6 +43,17 @@
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>        
     </style> 
 
+ 	
+ 	<style name="CustomWhiteActionBarTheme" parent="@android:style/Theme.Holo.Light" type="text/css" >
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:actionBarStyle">@style/MyWhiteActionBar </item>
+        <item name="android:actionBarTabTextStyle">@style/MyActionBarTabText</item>
+    </style>
+    
+ 	<style name="MyWhiteActionBar" parent="@android:style/Widget.Holo.Light.ActionBar" type="text/css">
+        <item name="android:background">#ffffffff</item>   
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>        
+    </style> 
  	
 </resources>
 	

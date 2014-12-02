@@ -145,9 +145,7 @@ public class RegisterAndLoginActivity extends Activity {
 	            mPopupWindow.showAsDropDown(v, btn_more.getWidth(), -btn_more.getHeight());// X、Y方向各偏移按钮的宽度
 			}
 		});
-    	
-		
-		
+
 	}
 	
 	/**

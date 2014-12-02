@@ -59,7 +59,7 @@ public class SinaAuthHelper {
 			Log.i("main", "--->onComplete() UserIco:"+platform.getDb().getUserIcon());
 			Log.i("main", "--->onComplete() getName:"+platform.getName());
 			LoginKeeperHelper.writeLoginPartName(activity, platform.getName());
-			
+			LoginKeeperHelper.wirteLoginStatus(activity, true);
 			Message msg = handler.obtainMessage();
 			msg.what = 1;
 			msg.arg1 = action;

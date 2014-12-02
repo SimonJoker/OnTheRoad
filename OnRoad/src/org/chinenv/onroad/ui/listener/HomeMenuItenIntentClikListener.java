@@ -25,23 +25,15 @@ public class HomeMenuItenIntentClikListener implements OnClickListener {
 		Intent intent;
 		switch (v.getId()) {
 		
-		case R.id.menu_usage:
-			intent = new Intent(activity, GuidSplashActivity.class);
-			Bundle bundle = new Bundle();
-			bundle.putBoolean("Useage", true);
-			intent.putExtras(bundle);
-			activity.startActivity(intent);
-			break;
-		case R.id.menu_pub:
-			
-			break;
-		case R.id.menu_why_pub:
-			
-			break;
+//		case R.id.menu_usage:
+//			intent = new Intent(activity, GuidSplashActivity.class);
+//			Bundle bundle = new Bundle();
+//			bundle.putBoolean("Useage", true);
+//			intent.putExtras(bundle);
+//			activity.startActivity(intent);
+//			break;
+
 		case R.id.menu_setting:
-			
-			break;
-		case R.id.menu_help:
 			
 			break;
 		case R.id.login_layout:

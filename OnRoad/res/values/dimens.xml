@@ -20,6 +20,12 @@
     <dimen name="home_activity_content_city_size">36sp</dimen>
     <dimen name="home_activity_content_description_size">20sp</dimen>
     
+    <!-- home activity handpick text size -->
+    <dimen name="home_activity_handpick_content_title_size">36sp</dimen>
+    <dimen name="home_activity_handpick_content_description_size">20sp</dimen>
+    
+    
+    
     <!-- home activity user home text size -->
     <dimen name="home_activity_user_home_look_user_info_size">12sp</dimen>
     <dimen name="home_activity_user_home_content_size">16sp</dimen>
@@ -53,5 +59,24 @@
     <dimen name="discover_fragment_content_guid_text_size">12sp</dimen>
     <dimen name="discover_fragment_content_guid_text_margin">4dp</dimen>
     
+     <!-- like this page -->
+    <dimen name="like_this_activity_margin_leftright">20dp</dimen>
+    <dimen name="like_this_activity_content_current_text_size">16sp</dimen>
+    
+    <!-- theme list page -->
+    <dimen name="theme_list_activity_margin_leftright">20dp</dimen>
+    <dimen name="theme_list_activity_content_text_size">16sp</dimen>
+    <dimen name="theme_list_activity_ab_title_text_size">20sp</dimen>
+    
+     <!-- activity content page -->
+    <dimen name="activity_content_margin_leftright">20dp</dimen>
+    <dimen name="activity_content_title_size">16sp</dimen>
+    <dimen name="activity_title_text_size">20sp</dimen>
+    <dimen name="activity_content_text_size">16sp</dimen>
+    <dimen name="activity_content_tab_margin_topBotton">8dp</dimen>
+    
+     			<!-- time line -->
+    <dimen name="wish_list_time_line_time_text_size">12sp</dimen>
+    <dimen name="wish_list_time_line_content_text_size">14sp</dimen>
     
 </resources>

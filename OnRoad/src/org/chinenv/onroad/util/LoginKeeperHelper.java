@@ -30,10 +30,13 @@ public class LoginKeeperHelper {
     private static final String PREFERENCES_NAME = "org_chinenv_onroad";
 
     private static final String PART_NAME           = "part_name";
+    
+    private static final String LOGIN_STATUS_PREFERENCES_NAME = "org_chinenv_onroad_login_status";
+    private static final String HASE_LOGINED           = "has_login";
 
     
     /**
-     * 保存 Token 对象到 SharedPreferences。
+     * 保存授权登陆的第三方平台  对象到 SharedPreferences。
      * 
      * @param context 应用程序上下文环境
      * @param token   Token 对象
@@ -48,13 +51,32 @@ public class LoginKeeperHelper {
         editor.putString(PART_NAME, partName);
         editor.commit();
     }
+    
+    
+    
+    /**
+     * 保存当前的登陆状态 对象到 SharedPreferences。
+     * 
+     * @param context 应用程序上下文环境
+     * @param loginStatus   是否已登录 
+     */
+    public static void wirteLoginStatus(Context context, boolean loginStatus) {
+        if (null == context) {
+            return;
+        }
+        
+        SharedPreferences pref = context.getSharedPreferences(LOGIN_STATUS_PREFERENCES_NAME, Context.MODE_APPEND);
+        Editor editor = pref.edit();
+        editor.putBoolean(HASE_LOGINED, loginStatus);
+        editor.commit();
+    }
 
     /**
-     * 从 SharedPreferences 读取 Token 信息。
+     * 从 SharedPreferences 读取  授权登陆的第三方平台 信息。
      * 
      * @param context 应用程序上下文环境
      * 
-     * @return 返回 Token 对象
+     * @return 返回 授权登陆的第三方平台 对象
      */
     public static String readLoginPartName(Context context) {
         if (null == context) {
@@ -65,6 +87,24 @@ public class LoginKeeperHelper {
         SharedPreferences pref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_APPEND);
         partName = pref.getString(PART_NAME, "");
         return partName;
+    }
+    
+    /**
+     * 从 SharedPreferences 读取  授权登陆的第三方平台 信息。
+     * 
+     * @param context 应用程序上下文环境
+     * 
+     * @return 返回 授权登陆的第三方平台 对象
+     */
+    public static boolean readLoginStatus(Context context) {
+        if (null == context) {
+            return false;
+        }
+        
+        boolean loginStatus;
+        SharedPreferences pref = context.getSharedPreferences(LOGIN_STATUS_PREFERENCES_NAME, Context.MODE_APPEND);
+        loginStatus = pref.getBoolean(HASE_LOGINED, false);
+        return loginStatus;
     }
 
     /**
@@ -78,6 +118,23 @@ public class LoginKeeperHelper {
         }
         
         SharedPreferences pref = context.getSharedPreferences(PREFERENCES_NAME, Context.MODE_APPEND);
+        Editor editor = pref.edit();
+        editor.clear();
+        editor.commit();
+    }
+    
+    
+    /**
+     * 清空 SharedPreferences 中用户登陆状态
+     * 
+     * @param context 应用程序上下文环境
+     */
+    public static void clearLoginStatus(Context context) {
+        if (null == context) {
+            return;
+        }
+        
+        SharedPreferences pref = context.getSharedPreferences(LOGIN_STATUS_PREFERENCES_NAME, Context.MODE_APPEND);
         Editor editor = pref.edit();
         editor.clear();
         editor.commit();

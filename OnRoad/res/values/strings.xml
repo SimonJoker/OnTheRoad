@@ -16,29 +16,29 @@
     <string name="home_menu_seek">搜索</string>
     <string name="home_menu_usage">如何使用This</string>
     <string name="home_menu_rentout">个人</string>
-    <string name="home_menu_pub">心愿单</string>
+    <string name="home_menu_wish_list_btn">心愿单</string>
     <string name="home_menu_why_pub">成长烙印</string>
     <string name="home_menu_setting">设置</string>
     <string name="home_menu_help">帮助</string>
     <string name="home_menu_reginOrlogin">注册或登录</string>
     
-    <string name="home_menu_handpick">精选</string>
+    
+    <!-- 精选页 --> 
+    <string name="home_menu_handpick">发现</string>
+    <string name="home_activity_handpick_description_1">当前主题共有</string>
+    <string name="home_activity_handpick_description_2">个活动</string>
+    
     
    <!--  用户 主页 -->
     <string name="home_user_home_ab_title">账号</string>
     <string name="home_user_home_look_userInfo">查看个人资料</string>
     <string name="home_user_home_user_setting">设置</string>
     <string name="home_user_home_like_this">喜欢走起？</string>
-    <string name="home_user_home_how_to_use">喜欢走起？</string>
+    <string name="home_user_home_how_to_use">如何使用</string>
     <string name="home_user_home_service_item">服务条款</string>
     <string name="home_user_home_privacy_policy">隐私政策</string>
     <string name="home_user_home_logout">退出</string>
     
-    
-    
-    
-    
-
    <!--  引导页 -->
     <string name="guide_btn_text">立即体验</string>
     <string name="guide_title_first">向世界各地的当地房东租住独一无二的房源</string>
@@ -73,5 +73,35 @@
     <string name="discover_fragment_guid_text_two">现在，轮到我们来领路了</string>
     <string name="discover_fragment_guid_text_three">开始出发吧！</string>
     
+    <!--  like this -->
+    <string name="like_this_title_text">喜欢我们？那就告诉全世界吧！</string>
+    <string name="like_this_OK_text">好！</string>
+    <string name="like_this_NO_text">暂时不要</string>
+    
+    <!-- theme list -->
+    <string name="theme_list_price_text">￥</string>
+    <string name="theme_list_ab_title_text">本周精选</string>
+    <string name="theme_list_description_text">Flat near Chaamps-Elysees</string>
+    <string name="theme_list_evaluate_text">公用空间·4评价 - Paris</string>
+    
+    <!-- activity content -->
+    <string name="activity_content_position_symbol">/</string>
+    <string name="activity_content_evaluate_total">查看所有评价</string>
+    <string name="activity_content_description_title">描述</string>
+    <string name="activity_content_description_more">阅读更多</string>
+    <string name="activity_content_form">类型</string>
+    <string name="activity_content_fit_age">适合年龄</string>
+    <string name="activity_content_useful_life">有效期</string>
+    <string name="activity_content_open_time">开放时间</string>
+    <string name="activity_content_price">费用</string>
+    <string name="activity_content_phone_number">联系电话：</string>
+    <string name="activity_content_close_activity">相似去处</string>
+    
+    
+    <!-- wish list activity -->
+    <string name="wish_list_activity_start_search">开始搜索</string>
+    <string name="wish_list_activity_content_text_1">探索无数童话般的目的地，为了孩子</string>
+    <string name="wish_list_activity_content_text_2">添加最合适他（她）的地方</string>
+    <string name="wish_list_activity_create_list">创建心愿单</string>
     
 </resources>

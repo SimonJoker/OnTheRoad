@@ -48,34 +48,7 @@
 	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
 	                />
             </LinearLayout>
-            
-            <LinearLayout 
-		        android:layout_width="match_parent"
-		        android:layout_height="1px"
-		        android:background="@color/discover_fragment_divider_color"
-		        android:layout_marginTop="10dp"
-		        android:layout_marginLeft="@dimen/discover_fragment_margin_leftright"
-		        android:layout_marginRight="@dimen/discover_fragment_margin_leftright">
-		    </LinearLayout>
-            
-            <LinearLayout 
-                android:id="@+id/user_setting"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/user_home_fragment_user_info_text_selector"
-                android:clickable="true"
-                android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
-                android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
-                <TextView 
-	            	android:layout_width="wrap_content"
-	                android:layout_height="wrap_content"
-	                android:text="@string/home_user_home_user_setting"
-	                android:textColor="@color/home_activity_usr_home_text_color"
-	                android:textSize="@dimen/home_activity_user_home_content_size"
-	                android:layout_margin="@dimen/home_activity_user_home_look_user_info_margin"
-	                />
-            </LinearLayout>
-            
+
             <LinearLayout 
 		        android:layout_width="match_parent"
 		        android:layout_height="1px"
@@ -111,28 +84,28 @@
 		    </LinearLayout>
             
             <FrameLayout 
-                android:id="@+id/how_use_this"
                 android:layout_width="match_parent"
                 android:layout_height="140dp"
-                android:background="@drawable/user_home_fragment_user_info_text_selector"
-                android:clickable="true"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
                 android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright">
              	<ImageView 
              	    android:layout_width="match_parent"
              	    android:layout_height="match_parent"
-             	    android:src="@drawable/appintro2"
+             	    android:src="@drawable/appintro1"
              	    android:scaleType="centerCrop"/>
              	<LinearLayout 
+             	    android:id="@+id/how_use_this"
              	    android:layout_width="match_parent"
              	    android:layout_height="match_parent"
+             	    android:clickable="true"
+             	    android:background="@drawable/user_home_fragment_user_info_text_selector"
              	    android:gravity="center">
              	    <TextView 
 		            	android:layout_width="wrap_content"
 		                android:layout_height="wrap_content"
 		                android:text="@string/home_user_home_how_to_use"
-		                android:textColor="@color/home_activity_usr_home_text_color"
+		                android:textColor="@android:color/white"
 		                android:textSize="@dimen/home_activity_user_home_content_size"
 	                	/>
              	</LinearLayout>
@@ -206,7 +179,7 @@
                 android:layout_marginLeft="@dimen/home_activity_user_home_margin_leftright"
                 android:layout_marginRight="@dimen/home_activity_user_home_margin_leftright"
                 android:layout_marginTop="20dp"
-                android:layout_marginBottom="40dp"
+                android:layout_marginBottom="60dp"
                 android:gravity="center">
                 <LinearLayout 
 		        	android:layout_width="fill_parent"

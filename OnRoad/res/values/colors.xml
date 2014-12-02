@@ -11,6 +11,7 @@
     <color name="gray_transparent">#87919191</color>
     <color name="light_gray_transparent">#D3D3D3</color>
     <color name="light_transparent">#55000000</color>
+    <color name="dark_transparent">#97000000</color>
     
     <color name="light">#FFEEEEEE</color>
     
@@ -49,5 +50,32 @@
 	<!-- discover fragment --> 
 	<color name="discover_fragment_text_color">#726f83</color>
 	<color name="discover_fragment_divider_color">#87B5B5B5</color>
+	
+	 <!--  like this -->
+    <color name="like_this_text_color_white">#FFFFFF</color>
+    <color name="like_this_ok_nomal_color">#FF0000</color>
+	<color name="like_this_ok_pressed_color">#EE6A50</color>
+	
+	<!-- theme list activity -->
+	<color name="theme_list_description_text_color">#726f83</color>
+	<color name="theme_list_evaluate_text_color_gray">#99A8A8A8</color>
+	<color name="theme_list_ab_title_color">#726f83</color>
     
+	
+	<!-- activity content color -->
+	<color name="activity_title_text_color">#726f83</color>
+	<color name="activity_content_text_color_black">#292929</color>
+	<color name="activity_content_divider_color">#87B5B5B5</color>
+	<color name="activity_content_background_color_gray">#DEDEDE</color>
+	<color name="activity_content_btn_color_red">#EE0000</color>
+	<color name="activity_content_text_color_gray">#CFCFCF</color>
+	
+	<!-- wish list activity -->
+	<color name="wish_list_title_text_color_gray">#CFCFCF</color>
+	<color name="wish_list_content_text_color">#726f83</color>
+	<color name="wish_list_content_text_color_red">#EE2C2C</color>
+			<!-- time line text clolor -->
+	<color name="wish_list_time_line_text_color">#726f83</color>
+	
+	
 </resources>
