@@ -21,6 +21,12 @@ android-viewpagerindicator/gen/
 android-menudrawer-library/bin/
 android-menudrawer-library/gen/
 
+android-universal-imageLoader/bin/
+android-universal-imageLoader/gen/
+
+android-circleimageview/bin/
+android-circleimageview/gen/
+
 # Gradle files
 .gradle/
 build/
