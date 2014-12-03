@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="180dp">
+    <ImageView 
+        android:id="@+id/header_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/a6"
+        android:scaleType="centerCrop"/>
+	<LinearLayout 
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:orientation="horizontal"
+	    android:gravity="bottom">
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_marginLeft="30dp">
+	        <TextView 
+	            android:id="@+id/add_time"
+	            android:layout_width="wrap_content"
+	            android:layout_height="wrap_content"
+	            android:text="2014-11-30"
+	            android:layout_marginTop="25dp"
+	            android:textColor="#00000000"
+	            android:textSize="@dimen/wish_list_time_line_time_text_size"/>
+	    </LinearLayout>
+	 	
+	    <LinearLayout 
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content">
+	        <FrameLayout 
+	            android:layout_width="wrap_content"
+	            android:layout_height="match_parent">
+	            <LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="60dp"
+	                android:gravity="center"
+	                android:orientation="vertical">
+	                <View
+				        android:id="@+id/view_0"
+				        android:layout_width="1dp"
+				        android:layout_height="match_parent"
+				        android:layout_below="@+id/layout_1"
+				        android:background="#A6A6A6" />
+	            </LinearLayout>
+	            
+				<LinearLayout 
+	                android:layout_width="match_parent"
+	                android:layout_height="match_parent"
+	                android:gravity="center_horizontal"
+	                android:orientation="vertical">
+		            <ImageView
+		                android:id="@+id/image"
+		                android:layout_width="wrap_content"
+		                android:layout_height="wrap_content"
+		                android:src="@drawable/timeline_green" />
+	            </LinearLayout>
+	
+	        </FrameLayout>
+	     </LinearLayout>
+	</LinearLayout>
+</FrameLayout>

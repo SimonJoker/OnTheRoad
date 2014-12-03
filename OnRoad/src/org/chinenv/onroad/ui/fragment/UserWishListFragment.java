@@ -95,7 +95,6 @@ public class UserWishListFragment extends Fragment {
 		_noWishList = (LinearLayout)_view.findViewById(R.id.no_wish_data);
 		_hasWishList = (LinearLayout)_view.findViewById(R.id.has_wish_data);
 		
-		_wishListBanner = (ImageView)_view.findViewById(R.id.banner_image);
 		_mList = (ListView)_view.findViewById(R.id.wish_time_line);
 		
 	}
@@ -109,6 +108,9 @@ public class UserWishListFragment extends Fragment {
 	}
 	
 	private void bindListView(){
+		View listHeader = (View)LayoutInflater.from(this.getActivity())
+				.inflate(R.layout.wish_list_fragment_list_header, null, false);
+		_mList.addHeaderView(listHeader);
 		mAdapter = new WishListTimelineAdapter(this.getActivity(), index);
 		_mList.setAdapter(mAdapter);
 	}
